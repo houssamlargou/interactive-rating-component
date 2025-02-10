@@ -1,127 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --Orange: hsl(25, 97%, 53%);
+  --White: hsl(0, 0%, 100%);
+  --light: hsla(0, 0%, 33%, 0.244);
+  --Light-Grey: hsl(217, 12%, 63%);
+  --Dark-Blue: hsl(213, 19%, 18%);
+  --Very-Dark-Blue: hsl(216, 12%, 8%);
+}
+
+* {
+  @apply p-0 m-0 box-border;
+}
+
+html {
+  @apply text-[62.5%];
+}
+
+body {
+  @apply font-sans text-2xl h-screen bg-[var(--Very-Dark-Blue)] flex items-center justify-center;
+}
+
 .card {
-  width: 40rem;
-  background-color: var(--Dark-Blue);
-  padding: 3rem;
-  border-radius: 3rem;
+  @apply w-[40rem] bg-[var(--Dark-Blue)] p-[3rem] rounded-3xl;
 }
 
 .icon {
-  background-color: var(--light);
-  margin-bottom: 4rem;
-  width: 5rem;
-  height: 5rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @apply bg-[light] mb-[4rem] w-[5rem] h-[5rem] rounded-[50%] flex items-center justify-center bg-[var(--light)];
 }
 
 .card-header {
-  color: var(--White);
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  font-weight: bold;
+  @apply text-[White] text-[2.5rem] mb-[1rem] font-bold;
 }
 
 .card-paragraph {
-  color: var(--Light-Grey);
-  margin-bottom: 2.5rem;
-  line-height: 1.7;
+  @apply text-[LightGrey] mb-[2.5rem] leading-[1.7];
 }
 
 .numbers {
-  display: flex;
-  justify-content: space-between;
+  @apply flex justify-evenly items-center;
 }
 
 .number {
-  color: var(--Light-Grey);
-  background-color: var(--light);
-  border: none;
-  display: inline-block;
-  width: 5rem;
-  height: 5rem;
-  border-radius: 50%;
-  margin-bottom: 3rem;
-  font-weight: bold;
-}
-
-.number:hover {
-  background-color: var(--White);
-  color: var(--Very-Dark-Blue);
-  cursor: pointer;
+  @apply text-[LightGrey] bg-[var(--light)] border-0 inline-block w-[5rem] h-[5rem] rounded-[50%] mb-[5rem] font-bold hover:bg-[White] hover:text-[hsl(216,12%,8%)] hover:cursor-pointer;
 }
 
 .number--highlighted {
-  color: var(--Dark-Blue);
-  background-color: var(--Orange);
-}
-
-.number--highlighted:hover {
-  color: var(--Dark-Blue);
-  background-color: var(--Orange);
+  @apply text-[DarkBlue] bg-[Orange] hover:text-[DarkBlue] hover:bg-[Orange];
 }
 
 .card-button {
-  width: 100%;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding: 1.5rem;
-  border-radius: 10rem;
-  color: var(--Very-Dark-Blue);
-  background-color: var(--Orange);
-  letter-spacing: 0.1rem;
-  /* font-weight: bold; */
-  border: 0.3rem solid black;
-}
-
-.card-button:hover {
-  background-color: var(--White);
-  cursor: pointer;
+  @apply w-[100%] uppercase font-bold p-[1.5rem] rounded-[10rem] text-[hsl(216,12%,8%)] bg-[Orange] tracking-[0.1rem] border-[.3rem] border-solid border-black hover:bg-[var(--White)] hover:cursor-pointer;
 }
 
 .thank-you__card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 40rem;
-  background-color: var(--Dark-Blue);
-  padding: 3rem;
-  border-radius: 3rem;
+  @apply flex flex-col justify-center items-center w-[40rem] bg-[var(--Dark-Blue)] p-[3rem] rounded-[3rem];
 }
 
 .illustration {
-  padding: 1rem;
+  @apply p-[1rem];
 }
 
 .number-selected__para {
-  color: var(--Orange);
-  background-color: var(--light);
-  padding: 0.5rem 2rem;
-  border-radius: 10rem;
-  margin: 2rem;
+  @apply text-[Orange] bg-[light] pt-[0.5rem] pb-[0.5rem] pl-[2rem] pr-[2rem] rounded-[10rem] m-[2rem];
 }
 
 .heading {
-  color: var(--White);
-  margin: 1rem;
-  font-size: 2.5rem;
+  @apply text-[White] m-[1rem] text-[2.5rem];
 }
 
 .feedback-message {
-  color: var(--Light-Grey);
-  text-align: center;
-  line-height: 1.7;
-  padding: 0.5rem;
+  @apply text-[LightGrey] text-center leading-[1.7] p-[.5rem];
 }
 
 .back {
-  background-color: var(--Orange);
-  color: var(--Very-Dark-Blue);
-}
-
-.back:hover {
-  background-color: var(--Orange);
-  color: var(--Very-Dark-Blue);
+  @apply bg-[Orange] bg-[hsl(216,12%,8%)] hover:bg-[Orange] hover:text-[hsl(216,12%,8%)];
 }
